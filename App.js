@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import type {Node} from 'react';
+import type { Node } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -25,8 +25,10 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import SampleData from "./sample_data/sample_todo_list.json";
+import { TodoItem } from "./components/TodoItem.js";
 
-const Section = ({children, title}): Node => {
+const Section = ({ children, title }): Node => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
@@ -70,6 +72,9 @@ const App: () => Node = () => {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
+          <TodoItem title="Test Todo">
+              Test Content
+          </TodoItem>
           <Section title="Step One">
             Edit <Text style={styles.highlight}>App.js</Text> to change this!!!!!
             screen and then come back to see your edits.
